@@ -1,0 +1,152 @@
+.header {
+  @include page-grid;
+
+  position: relative;
+
+  @include tablet {
+    padding-left: 34px;
+    height: 384px;
+  }
+
+  @include desktop {
+    height: 655px;
+    padding-inline: 0;
+
+    @include desktop-container;
+
+    margin-right: 0;
+  }
+
+  &__left {
+    @include mobile {
+      position: static;
+      grid-column: span 2;
+      padding-inline: 20px;
+    }
+
+    @include tablet {
+      padding: 40px 0 0;
+      position: relative;
+      grid-row: 1;
+      font-size: 40px;
+      grid-column: span 3;
+    }
+
+    @include desktop {
+      font-size: 48px;
+      grid-column: span 5;
+    }
+  }
+
+  &__title {
+    color: $main-black-color;
+    font-family: $montserrat;
+    font-weight: 700;
+    text-transform: uppercase;
+
+    @include mobile {
+      margin: 20px 0;
+      text-align: center;
+      font-size: 45px;
+      line-height: 100%;
+    }
+
+    @include tablet {
+      font-size: 54px;
+      text-align: left;
+      margin: 64px 0 38px;
+      line-height: 120%;
+    }
+
+    @include desktop {
+      margin: 143px 0 90px;
+      font-size: 72px;
+    }
+  }
+
+  &__events {
+    display: none;
+    position: absolute;
+    bottom: 105px;
+    left: 0;
+    color: $main-grey-color;
+    font-family: $ibm;
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 100%; /* 14px */
+    text-transform: uppercase;
+    transform: rotate(-90deg);
+
+    @include desktop {
+      display: block;
+    }
+    &::before {
+      content: "";
+      position: absolute;
+      bottom: 50%;
+      left: -90px;
+      width: 70px;
+      height: 1px;
+      background-color: $main-green-color;
+    }
+  }
+
+  &__right {
+    background-image: url("../images/header-bg.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    @include mobile {
+      grid-column: span 2;
+      grid-row: 1;
+      height: 300px;
+    }
+
+    @include tablet {
+      height: 384px;
+      font-size: 40px;
+      grid-column: 4 / 7;
+      position: absolute;
+      inset: 0;
+      z-index: -1;
+    }
+
+    @include desktop {
+      margin-right: calc((1170px - 100vw) / 2 + 11px);
+      font-size: 48px;
+      grid-column: 6 / -1;
+      z-index: -1;
+      height: 655px;
+    }
+  }
+
+  &__logo {
+    text-decoration: none;
+    display: block;
+    color: $secondary-black-color;
+    text-align: center;
+    font-family: $montserrat;
+    font-weight: 700;
+    line-height: 100%;
+    height: fit-content;
+
+    @include mobile {
+      font-size: 30px;
+      position: absolute;
+      top: 9px;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    @include tablet {
+      font-size: 36px;
+      grid-column: 4 / 6;
+      position: inherit;
+      margin: 15px 0 0;
+    }
+
+    @include desktop {
+      grid-column: 6 / 8;
+    }
+  }
+}
