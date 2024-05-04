@@ -36,6 +36,13 @@
       scale: 1.05;
       cursor: pointer;
     }
+
+    &-big {
+      &:hover {
+        scale: 1;
+        cursor: pointer;
+      }
+    }
   }
 
   &__data {
